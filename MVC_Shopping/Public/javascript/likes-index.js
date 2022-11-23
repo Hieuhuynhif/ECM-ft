@@ -119,22 +119,27 @@ class Like
         }
         else
         {
-            data.forEach(productCart => {
+            data.forEach(productCard => {
+                let src = `Assets/ImageProducts/ProductDefault.png`;
+                if(productCard.src)
+                {
+                    src = productCard.src; 
+                }
                 likes += 
-                `<div class="d-flex flex-row card" id ="${productCart.id}">
+                `<div class="d-flex flex-row card" id ="${productCard.id}">
                     <div class="card-img">
-                        <img src="${productCart.src}" alt="">
+                        <img src="${src}" alt="">
                     </div>
                     <div class="d-flex flex-row card-info">
                         <div class = "d-flex flex-column card-if"> 
                             <div class="card-id">
-                                <h6>ID: ${productCart.id}</h6>
+                                <h6>ID: ${productCard.id}</h6>
                             </div>
                             <div class="card-price">
-                                <h6>Price of Unit: ${productCart.price}</h6>
+                                <h6>Price of Unit: ${productCard.price}</h6>
                             </div>
                             <div class="card-name">
-                                <h6>Name: ${productCart.name}</h6>
+                                <h6>Name: ${productCard.name}</h6>
                             </div>
                             <div class="d-flex flex-column card-option">
                                 <div class="card-option-color">

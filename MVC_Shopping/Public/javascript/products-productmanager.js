@@ -131,7 +131,7 @@ class ProductManager{
                 }
                 else
                 {
-                    let src = `Assets/ImageDefault/ProductDefault.png`;
+                    let src = `Assets/ImageProducts/ProductDefault.png`;
                     if(data[0].src)
                     {
                         src = data[0].src;

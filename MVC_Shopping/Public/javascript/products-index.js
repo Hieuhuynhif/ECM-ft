@@ -131,7 +131,7 @@ class ProductIndex
             editProduct = `<span class="edit edit-product"><i class="fa-solid fa-pen-to-square"></i></span>`;
         }
         data.forEach(productCard => {
-            let src = `Assets/ImageDefault/ProductDefault.png`;
+            let src = `Assets/ImageProducts/ProductDefault.png`;
             if(productCard.src)
             {
                 src = productCard.src; 

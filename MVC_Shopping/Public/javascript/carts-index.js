@@ -119,32 +119,37 @@ class Cart
             carts = "There are no items in your bag.";
         }
         else{
-            data.forEach(productCart => {
+            data.forEach(productCard => {
+                let src = `Assets/ImageProducts/ProductDefault.png`;
+                if(productCard.src)
+                {
+                    src = productCard.src; 
+                }
                 let cards = ``;
                 let subCards = "";
                 cards = 
-                `<div class="d-flex flex-column card-subcard" id ="${productCart.id}" >
+                `<div class="d-flex flex-column card-subcard" id ="${productCard.id}" >
                     <div class="d-flex flex-row card">
                         <div class="card-img">
-                            <img src="${productCart.src}" alt="">
+                            <img src="${src}" alt="">
                         </div>
                         <div class="d-flex flex-column card-info">
                             <div class="card-delete">
                                 <i class="fa-solid fa-xmark card-delete-btn"></i>
                             </div>
                             <div class="card-id">
-                                <h6>ID: ${productCart.id}</h6>
+                                <h6>ID: ${productCard.id}</h6>
                             </div>
                             <div class="card-price">
-                                <h6>Price of Unit: ${productCart.price}</h6>
+                                <h6>Price of Unit: ${productCard.price}</h6>
                             </div>
                             <div class="card-detail">
                                 <h5>Detail:</h5>
-                                <p class="text-break">${productCart.detail}</p>
+                                <p class="text-break">${productCard.detail}</p>
                             </div>
                         </div>
                     </div> `;
-                productCart.qty.forEach(qty =>{
+                productCard.qty.forEach(qty =>{
                     subCards += 
                 `<div class="d-flex flex-row sub-card-unit">
                     <div class="sub-card-color">${qty.color}</div>
@@ -154,7 +159,7 @@ class Cart
                         <span>${qty.qty}</span>
                         <i class="fa-sharp fa-solid fa-plus sub-card-add-btn"></i>
                     </div>
-                    <div class="sub-card-total">${qty.qty * productCart.price}</div>
+                    <div class="sub-card-total">${qty.qty * productCard.price}</div>
                     <div class="sub-card-delete"><i class="fa-solid fa-xmark sub-card-delete-btn"></i></div>
                 </div>`;
                 });

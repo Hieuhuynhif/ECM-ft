@@ -119,7 +119,7 @@
                 {
                     if(isset($_FILES['image']))
                     {
-                        $src ='Assets/ImageProducts/' . $infoData['type'] . '/'  . $infoData['name'] . '.' . pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+                        $src ='Assets/ImageProducts/' . $infoData['name'] . '.' . pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
                         move_uploaded_file($_FILES['image']['tmp_name'], $src);
                         $infoData['src'] = $src;
                     }
@@ -154,7 +154,7 @@
                 $infoData = json_decode($_POST['infoData'], true);
                 if(isset($_FILES['image']))
                 {
-                    $src ='Assets/ImageProducts/' . $infoData['type'] . '/' .$infoData['name'] . '.' . pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+                    $src ='Assets/ImageProducts/' . $infoData['name'] . '.' . pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
                     move_uploaded_file($_FILES['image']['tmp_name'], $src);
                     $infoData['src'] = $src;
                 }

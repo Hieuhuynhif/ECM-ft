@@ -135,7 +135,7 @@ class User{
             `<button id = "update">Update Infomation</button>
             <button id = "delete">Delete Account</button>`;
 
-            let src = `Assets/ImageDefault/UserDefault.png`;
+            let src = `Assets/ImageUsers/UserDefault.png`;
             if(data[0].src)
             {
                 src = data[0].src;
