@@ -1,0 +1,317 @@
+:root {
+	--primary-color: #4daf54;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+*:focus{
+	outline: none;
+}
+body{
+    color: #fff;
+    direction: ltr;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+	
+}
+.body-page{
+    color: #fff;
+}
+/* header ---------------------------------------------------------------------------------------*/
+.header{
+	position: sticky;
+	top: 0;
+	z-index: 3;
+}
+.menu, .jordan{
+	justify-content: center;
+	align-items: center;
+}
+/* Jordan -------------*/
+.jordan{
+	background-color: #f3f3f3;
+	width: 100%;
+	height: 5vh;
+}
+.icon-jordan ,.space, .sign {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	justify-content: center;
+}
+.jordan .icon-jordan{
+	width: 20%;
+}
+
+.jordan .sign{
+	width: 80%;
+	color: #272d40;
+	align-items: center;
+	justify-content: right;
+}
+.sign span{
+	font-size: 0.7rem;
+	color: #272d40;
+	cursor: pointer;
+	margin: 0.2rem;
+	padding: 0.3rem;
+}
+.sign span:hover{
+	color:darkgray;
+}
+
+/* End------------------ */
+/* Menu --------------------------*/
+
+.menu{
+	background-color: #fff;
+	width: 100%;
+	padding: 0.1rem;
+	height: 7vh;
+}
+
+.icon-nike ,.menu-cart-heart, .menu-option {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	justify-content: center;
+}
+.menu .icon-nike{
+	width: 20%;
+}
+.menu .menu-option{
+	width: 60%;
+}
+.menu-option span{
+	padding: 0.5rem;
+	cursor: pointer;
+	transition: 0.05s;
+	transition-delay: 0.05s;
+	border-radius: 5px;
+}
+.menu-option span:hover{
+	transform: scale(0.9);
+	background-color: #f3f3f3 !important;
+}
+.menu-option span span{
+	color: #272d40;
+}
+.menu-option span i{
+	color: #272d40;
+}
+
+.menu .menu-cart-heart{
+	width: 20%;
+}
+.icon-cart, .icon-heart{
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon-cart:hover, .icon-heart:hover{
+	background-color: #f3f3f3;
+	cursor: pointer;
+}
+
+.menu-cart-heart .icon-cart i, .menu-cart-heart .icon-heart i{
+	font-size: 1.2rem;
+	color: #272d40;
+}
+.number{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-right: 1rem;
+}
+.number span{
+	text-align: center;
+	font-size: 0.7rem;
+	color: #272d40;
+	font-weight: 600;
+}
+/* end ----------------------------------------------------*/
+
+/* end ---------------------------------------------------------------------------------------*/
+/* like */
+.likes{
+	color: #272d40;
+	padding: 3rem;
+}
+.like-frame{
+	width: 80%;
+}
+.like-product{
+	color: #272d40;
+	padding: 2rem;
+}
+.detail-product{
+	color: #272d40;
+	padding: 2rem;
+	width: 20%;
+	position: sticky;
+	top:12vh;
+	min-height: 70vh;
+	border-left: 1px #333 solid;
+}
+
+.card{
+	width: 100%;
+	height: 10rem;
+	background-color: #f3f3f3;
+	overflow: hidden;
+	margin-bottom: 1rem;
+}
+.card-img{
+	width: 35%;
+	background-color: #4daf54;
+}
+.card-img img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+.card-info{
+	width: 65%;
+	padding: 0.5rem;
+}
+.card-icon{
+	justify-content: center;
+	align-items: center;
+}
+.card-info .card-if{
+	width: 90%;
+}
+.card-info .card-icon{
+	width: 10%;
+}
+.card-info .card-if .card-id{
+	height: 15%;
+}
+.card-info .card-if .card-price{
+	height: 15%;
+}
+.card-info .card-if .card-name{
+	height: 15%;
+}
+.card-info .card-if .card-option{
+	height: 55%;
+	justify-content: center;
+}
+.card-info .card-icon i{
+	margin: 0.5rem 0;
+	font-size: 1rem;
+	cursor: pointer;
+}
+.card-info .card-icon i:hover{
+	transform: scale(0.9);
+}
+.card-option-size,
+.card-option-color {
+	display: flex;
+	align-items: center;
+	margin: 0.5rem;
+	transition: 0.5s;
+	transition-delay: 0.1s;
+
+}
+
+.card-option-size h5,
+.card-option-color h5 {
+	font-weight: unset;
+	margin-right: 12px;
+	color: #333
+}
+
+.card-option-size span {
+	padding: 2px 10px;
+	background-color: #dadada;
+	margin: 0 0.2rem;
+	border-radius: 5px;
+	color: #000;
+	cursor: pointer;
+}
+.card-option-size span:hover{
+	transform: scale(0.9);
+}
+.card-option-color span {
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	margin: 0 0.2rem;
+    cursor: pointer;
+	opacity: 0.5;
+}
+.card-option-color span:hover{
+	transform: scale(0.9);
+}
+.card-option-color span.green {
+	background-color: green;
+}
+.card-option-color span.red {
+	background-color: red;
+}
+.card-option-color span.black {
+	background-color: black;
+}
+.toggle-click-size{
+	background-color: #4daf54!important;
+}
+.toggle-click-color{
+	opacity: 1 !important;
+	border: 1px solid #333;
+}
+.footer{
+	background-color: #000;
+	padding: 3rem;
+}
+.footer-find{
+	width: 20%;
+}
+.footer-get{
+	width: 20%;
+}
+.footer-about{
+	width: 20%;
+}
+.footer p{
+	font-size: 0.7rem;
+	color: #888;
+	cursor: pointer;
+}
+.footer p:hover{
+	color: #fff;
+}
+.footer h6{
+	margin-bottom: 2rem;
+	font-size: 0.8rem;
+	cursor: pointer;
+	font-weight: 500;
+}
+.footer-icon{
+	width: 40%;
+	justify-content: right;
+}
+.footer-icon i{
+	margin-left: 1rem;
+	background-color:#888;
+	color: #000;
+	font-size: 1rem;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.footer-icon i:hover{
+	background-color: #fff;
+}
