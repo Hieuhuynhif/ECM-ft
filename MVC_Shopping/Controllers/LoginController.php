@@ -94,7 +94,7 @@
                     {
                         $_SESSION['user'] = [
                             'username' => $username[0]['username'],
-                            'sdt     ' => $username[0]['sdt'],
+                            'sdt' => $username[0]['sdt'],
                             'password' => $username[0]['password'],
                             'role'     => $username[0]['role']
                         ];
