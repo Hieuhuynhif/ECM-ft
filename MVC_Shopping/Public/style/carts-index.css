@@ -189,15 +189,20 @@ i{
 	padding: 0.5rem;
 	position: relative;
 }
-
+.card-info h6{
+	font-weight: 600;
+}
 .card-info .card-id{
+	height: 15%;
+}
+.card-info .card-name{
 	height: 15%;
 }
 .card-info .card-price{
 	height: 15%;
 }
 .card-info .card-detail{
-	height: 70%;
+	height: 55%;
 }
 .card-info .card-delete i{
 	background-color: #333;
@@ -349,16 +354,16 @@ i{
 	background-color: #f3f3f3;
 	border-radius: 2rem;
 	text-align: center;
-	cursor: pointer;
-	transition: 0.25s;
-	transition-delay: 0.1s;
 }
-.summary-checkout span:hover{
+.summary-checkout-btn-active:hover{
 	transform: scale(0.98);
 }
 .summary-checkout-btn-active{
 	background-color: #333 !important;
 	color: #f3f3f3 !important;
+	transition: 0.25s;
+	transition-delay: 0.1s;
+	cursor: pointer;
 }
 .summary-subtotal-title-empty{
 	color: #888;

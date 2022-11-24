@@ -45,6 +45,7 @@
                     ];
                     $_SESSION['user'] = [
                         'username' => $form['username'],
+                        'sdt'      => $form['sdt'],
                         'password' => $form['password'],
                         'role'     => 'customer'
                     ];
@@ -93,6 +94,7 @@
                     {
                         $_SESSION['user'] = [
                             'username' => $username[0]['username'],
+                            'sdt     ' => $username[0]['sdt'],
                             'password' => $username[0]['password'],
                             'role'     => $username[0]['role']
                         ];
@@ -124,6 +126,7 @@
                     {
                         $_SESSION['user'] = [
                             'username' => $sdt[0]['username'],
+                            'sdt'      => $sdt[0]['sdt'],
                             'password' => $sdt[0]['password'],
                             'role'     => $sdt[0]['role']
                         ];

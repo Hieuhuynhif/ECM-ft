@@ -6,13 +6,13 @@
         {
             return $this->basegetall(self::TABLE, $select, $orderBys, $limit);
         }
-        public function getby($key)
+        public function getby($getByProduct)
         {
-            return $this->basegetby(self::TABLE, $key);
+            return $this->basegetby(self::TABLE, $getByProduct);
         }
-        public function getlike($key)
+        public function getlike($getLikeProduct)
         {
-            return $this->basegetlike(self::TABLE, $key);
+            return $this->basegetlike(self::TABLE, $getLikeProduct);
         }
         public function insert($insertProduct)
         {

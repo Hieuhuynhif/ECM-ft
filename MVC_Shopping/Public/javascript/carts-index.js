@@ -1,5 +1,6 @@
 class Cart
 {
+    checkLogin = false;
     constructor(){
         this.showbag();
         this.store();
@@ -54,6 +55,7 @@ class Cart
         let data = await response.json()
         if(data.empty)
         {
+            this.checkLogin = false;
             this.loginRole = "";
             document.getElementById("editUser").innerHTML = 
             ``;
@@ -67,6 +69,7 @@ class Cart
         }
         else
         {
+            this.checkLogin = true;
             this.loginRole = `${data.role}`;
             let checkLogin =`${data.username}|${data.password}|${data.role}`;
             document.getElementById("signIn").innerHTML = `Log Out`;
@@ -140,11 +143,14 @@ class Cart
                             <div class="card-id">
                                 <h6>ID: ${productCard.id}</h6>
                             </div>
+                            <div class="card-name">
+                                <h6>Name: ${productCard.name}</h6>
+                            </div>
                             <div class="card-price">
                                 <h6>Price of Unit: ${productCard.price}</h6>
                             </div>
                             <div class="card-detail">
-                                <h5>Detail:</h5>
+                                <h6>Detail:</h6>
                                 <p class="text-break">${productCard.detail}</p>
                             </div>
                         </div>
@@ -308,11 +314,54 @@ class Cart
             </div>`;
             checkout =
             `<div class="summary-checkout">
-                <span class="summary-checkout-btn summary-checkout-btn-active">Check Out</span>
+                <span class="summary-checkout-btn summary-checkout-btn-active" id = "checkOut">Check Out</span>
             </div>`;
+
             summary = subtotal + total + checkout;
         }
         document.getElementById("detailSummary").innerHTML = summary;
+        this.checkout();
+    }
+
+    checkout()
+    {
+        document.getElementById("checkOut")
+        .addEventListener('click',async ()=>{
+            if(this.checkLogin == false)
+            {
+
+                
+            }
+            else
+            {
+                let date = new Date()
+                let order = {
+                    'time'  :   date.toLocaleString(),
+                }
+                let formData = new FormData();
+                formData.append('order', JSON.stringify(order));
+
+                let url = `index.php?controller=cart&action=order`;
+                let response = await fetch(url,{
+                    method : "POST",
+                    body : formData,
+                })
+                let data = await response.json()
+                if(data.status == "ok")
+                {
+
+                }
+                else if(data.status == "no")
+                {
+
+                }
+                else
+                {
+
+                }
+                
+            }
+        })
     }
     
 }
