@@ -156,7 +156,7 @@
                     foreach($qty as $value)
                     {
                         $detailOrder = [
-                            'id_order'      => $order['id'],
+                            'id_order'      => $order[0]['id'],
                             'id_product'    => $id_product,
                             'color'         => $value['color'],
                             'size'          => $value['size'],
