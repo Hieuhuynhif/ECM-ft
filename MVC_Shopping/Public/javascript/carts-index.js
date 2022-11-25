@@ -386,7 +386,14 @@ class Cart
                 if(data.status == "ok")
                 {
                     notify =
-                    `Order Successfully`;
+                    `Order Successfully
+                    </br>
+                    The page will be back in 3s`;
+                    
+                    setTimeout(() => {
+                    location.reload();
+                    }, 3000);
+
                 }
                 else if(data.status == "no")
                 {

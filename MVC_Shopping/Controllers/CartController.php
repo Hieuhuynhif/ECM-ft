@@ -164,6 +164,7 @@
                         $this->orderDetailModel->insert($detailOrder);
                     }   
                 }
+                unset($_SESSION['cart']);
                 $json = [
                     'status' => 'ok'
                 ];
@@ -202,7 +203,7 @@
                         $json[] =   $order;
                     }
                 }
-                
+
                 echo json_encode($json);
             }
             else
