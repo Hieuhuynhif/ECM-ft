@@ -386,7 +386,7 @@ class Cart
                 if(data.status == "ok")
                 {
                     notify =
-                    `Order Successfully
+                    `Order Successfully, Thank You
                     </br>
                     The page will be back in 3s`;
                     

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2022 at 12:49 PM
+-- Generation Time: Nov 25, 2022 at 03:01 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -56,15 +56,6 @@ CREATE TABLE `detail_order` (
   `qty` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `detail_order`
---
-
-INSERT INTO `detail_order` (`id`, `id_order`, `id_product`, `color`, `size`, `qty`) VALUES
-(1, 0, 21, 'red', 7, 2),
-(2, 0, 21, 'red', 9, 2),
-(3, 0, 21, 'black', 6, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -75,15 +66,17 @@ CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `sdt` varchar(15) NOT NULL,
-  `time` varchar(255) NOT NULL
+  `time` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `username`, `sdt`, `time`) VALUES
-(1, 'test', '111', '11/24/2022, 2:54:28 PM');
+INSERT INTO `orders` (`id`, `username`, `sdt`, `time`, `address`) VALUES
+(9, 'test', '1432', '11/25/2022, 5:55:49 PM', 'đấ'),
+(10, 'test', '4234432', '11/25/2022, 5:56:14 PM', '34234');
 
 -- --------------------------------------------------------
 
@@ -156,7 +149,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `username`, `password`, `sdt`, `src`, `likes`, `role`) VALUES
 (68, 'admin', 'admin', '999999999', '', '', 'admin'),
-(70, 'test', '111', '111', '', '', 'customer');
+(70, 'test', '111', '111', 'Assets/ImageUsers/test.jpg', '', 'customer');
 
 --
 -- Indexes for dumped tables
@@ -220,13 +213,13 @@ ALTER TABLE `color`
 -- AUTO_INCREMENT for table `detail_order`
 --
 ALTER TABLE `detail_order`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `products`

@@ -85,7 +85,7 @@
                         </div>
                     </div>
                     <div class="account-general-card" id="accountGeneralCard">
-
+                        
                     </div>
                 </div>
                 <div class="notify">
@@ -94,9 +94,22 @@
                 <div class="d-flex flex-row account-general-edit" id = "accountGeneralEdit">
                         
                 </div>
-                <div class="d-flex flex-column orders" id="order">
+                <div class="d-flex flex-column orders">
+                    <div class="flex flex-column ">
+                        <h3>Order History</h3>
+                        <div class="order-title">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column" id="order">
                     
+                    </div>
                 </div>
+                
             </div>
             <div class="d-flex flex-row footer">
                 <div class="d-flex flex-column footer-find">

@@ -178,33 +178,44 @@ class User{
             {
                 let orders = "";
                 dataOrder.forEach(order => {
-                    let suborder = "";
-                    let orderTitle =
-                    `<div class="d-flex flex-row order-card-title">
-                    ${order.id}
-                    ${order.username}
-                    ${order.sdt}
-                    ${order.time}
-                    ${order.address}
-                    </div>
-                    
-                    `;
+                    let subOrder = "";
+                    let orderTitle = "";
+                    let cardOrder = ""
+                    orderTitle = 
+                    `<div class="d-flex flex-column order-card-title">
+                        <span>OrderID       :${order.id}</span>
+                        <span>Username      :${order.username}</span>
+                        <span>Phone Number  :${order.sdt}</span>
+                        <span>Time          :${order.time}</span>
+                        <span>Address       :${order.address}</span>
+                    </div>`;
+
                     order.orderDetail.forEach(orderDetail   => {
-                        suborder +=
+                        subOrder +=
                         `<div class="d-flex flex-row order-card-detail">
-                        ${orderDetail.id_product}
-                        ${orderDetail.color}
+                            <span>${orderDetail.id_product}</span>
+                            <span>${orderDetail.color}</span>
+                            <span>${orderDetail.size}</span>
+                            <span>${orderDetail.qty}</span>
                         </div>
                          `;
                     })
-                    orders += (orderTitle+ suborder)
+                    cardOrder = 
+                    `<div class="d-flex flex-column order-card">
+                        ${orderTitle}
+                    <div class="d-flex flex-row order-card-detail-title">
+                        <span>ProductID</span>
+                        <span>Color</span>
+                        <span>Size</span>
+                        <span>Quantity</span>
+                    </div>
+                        ${subOrder}
+                    </div>`;
+                        
+                    orders += cardOrder;
                 });
-                document.getElementById("order").innerHTML  =
-                    `<div class="d-flex flex-column order-card">`
-                    +
-                    orders
-                    +
-                    `</div>`;
+
+                document.getElementById("order").innerHTML  =   orders ;
             }
 
         }   

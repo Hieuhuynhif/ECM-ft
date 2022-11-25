@@ -202,9 +202,7 @@ body{
 .account-general-edit button:hover{
 	transform: scale(0.95);
 }
-.orders{
-	color: #000;
-}
+
 .card{
 	height: 25rem;
 	width: 20rem;
@@ -314,16 +312,47 @@ body{
 	align-items: center;
 	height: 3rem;
 }
-.order-card{
-	width: 100%;
-	border: solid 1px #000;
-	border-radius: 5px;
+.orders{
+	color: #000;
+	border-top: #888 1px solid;
+	margin-top: 1rem;
+	padding: 1rem;
 }
-.order-card-title{
+.orders h3{
+	margin-bottom: 4rem;
+}
+.order-card{
+	padding: 1rem;
+	margin-bottom: 2rem;
+	background-color: #f3f3f3;
 
 }
+.order-card-title{
+	padding: 1rem;
+}
+.order-card-title span{
+	font-size: 1rem;
+	font-weight: 600;
+	padding: 0.5rem;
+}
+.order-card-detail-title{
+	border-top: 1px solid #333;
+	padding: 1rem;
+}
+
+.order-card-detail-title span{
+	width: 20%;
+	font-size: 0.8rem;
+	font-weight: 600;
+	text-align: center;
+}
 .order-card-detail{
-	
+	padding: 0.5rem;
+}
+.order-card-detail span{
+	width: 20%;
+	font-size: 0.8rem;
+	text-align: center;
 }
 .footer{
 	background-color: #000;

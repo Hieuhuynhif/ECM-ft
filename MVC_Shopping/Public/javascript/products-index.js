@@ -139,9 +139,9 @@ class ProductIndex
             products += 
                 `<div class="card_c col" id ="${productCard.id}">
                 <span class="like addToFvr"><i class="fa-sharp fa-solid fa-heart-circle-plus"></i></span>
-                <span class="cart addToCart"><i class="fa-solid fa-cart-plus" ></i></span>`
-                + editProduct +
-                `<div class="card-img">
+                <span class="cart addToCart"><i class="fa-solid fa-cart-plus" ></i></span>
+                    ${editProduct}
+                <div class="card-img">
                     <div class="card__img">
                     <img src="${src}" alt="" />
                     </div>
