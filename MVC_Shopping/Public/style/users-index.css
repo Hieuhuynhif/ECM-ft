@@ -202,6 +202,9 @@ body{
 .account-general-edit button:hover{
 	transform: scale(0.95);
 }
+.orders{
+	color: #000;
+}
 .card{
 	height: 25rem;
 	width: 20rem;

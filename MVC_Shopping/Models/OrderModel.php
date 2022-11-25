@@ -2,6 +2,7 @@
 class OrderModel extends BaseModel
 {
     const TABLE = 'orders';
+
     public function getby($getByOrder)
     {
         return $this->basegetby(self::TABLE, $getByOrder);

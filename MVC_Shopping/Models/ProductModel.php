@@ -2,9 +2,9 @@
     class ProductModel extends BaseModel
     {
         const TABLE = 'products';
-        public function getall($select =['*'], $orderBys = [], $limit = 15 )
+        public function getall($orderBys = [], $limit = 15 )
         {
-            return $this->basegetall(self::TABLE, $select, $orderBys, $limit);
+            return $this->basegetall(self::TABLE, $orderBys, $limit);
         }
         public function getby($getByProduct)
         {

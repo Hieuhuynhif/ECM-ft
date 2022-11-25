@@ -177,5 +177,41 @@
 
             echo json_encode($json);
         }
+        public function getorder()
+        {
+            if(!empty($_SESSION['user']))
+            {
+                $orders = $this->orderModel->getby([
+                    'username'  =>  $_SESSION['user']['username']
+                ]);
+
+                if(empty($orders))
+                {
+                    $json = [
+                        'empty' =>  true
+                    ];
+                }
+                else
+                {
+                    foreach($orders as $order)
+                    {
+                        $orderDetail = $this->orderDetailModel->getby([
+                            'id_order'  =>  $order['id']
+                        ]);
+                        $order['orderDetail']   =   $orderDetail;
+                        $json[] =   $order;
+                    }
+                }
+                
+                echo json_encode($json);
+            }
+            else
+            {
+                $olduri = $_SESSION['olduri'];
+                return header("location: $olduri");
+            }
+            
+
+        }
     }
  ?>

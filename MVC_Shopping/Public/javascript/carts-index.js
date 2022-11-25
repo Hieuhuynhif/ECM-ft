@@ -385,11 +385,13 @@ class Cart
                 let data = await response.json()
                 if(data.status == "ok")
                 {
-    
+                    notify =
+                    `Order Successfully`;
                 }
                 else if(data.status == "no")
                 {
-    
+                    notify =
+                    `Order Failed`;
                 }
                 else
                 {

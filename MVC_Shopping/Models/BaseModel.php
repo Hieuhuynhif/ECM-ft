@@ -12,15 +12,14 @@
             $this->connect = $this->connect();
             return mysqli_query($this->connect, $sql);
         }
-        public function basegetall($table, $select = ['*'], $orderBys = [], $limit = 15)
+        public function basegetall($table, $orderBys = [], $limit = 15)
         {
-            $columns = implode(',', $select);
             $orderByString = implode(' ', $orderBys);
             if($orderByString)
             {
-                $sql = "SELECT ${columns} FROM ${table} WHERE status = '1' ORDER BY ${orderByString} LIMIT ${limit} ";
+                $sql = "SELECT * FROM ${table} WHERE status = '1' ORDER BY ${orderByString} LIMIT ${limit} ";
             }else{
-                $sql = "SELECT ${columns} FROM ${table} WHERE status = '1' LIMIT ${limit} ";
+                $sql = "SELECT * FROM ${table} WHERE status = '1' LIMIT ${limit} ";
             }
             
             $query = $this->_query($sql);

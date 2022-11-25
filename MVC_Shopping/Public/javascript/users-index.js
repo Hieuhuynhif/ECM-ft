@@ -164,8 +164,50 @@ class User{
                 this.update();
                 this.delete();
 
-            // let urlOrder = `index.php?&controller=user&action=getuser&username=${dataCheck.username}`
-        }
+            let urlOrder = `index.php?&controller=cart&action=getorder`;
+            let responseOrder   =   await fetch(urlOrder,{
+                method  :   "GET",
+            })
+            let dataOrder       =   await responseOrder.json();
+            if(dataOrder.empty)
+            {
+                document.getElementById("order").innerHTML  =   
+                `You haven't buy any Products yet`
+            }
+            else
+            {
+                let orders = "";
+                dataOrder.forEach(order => {
+                    let suborder = "";
+                    let orderTitle =
+                    `<div class="d-flex flex-row order-card-title">
+                    ${order.id}
+                    ${order.username}
+                    ${order.sdt}
+                    ${order.time}
+                    ${order.address}
+                    </div>
+                    
+                    `;
+                    order.orderDetail.forEach(orderDetail   => {
+                        suborder +=
+                        `<div class="d-flex flex-row order-card-detail">
+                        ${orderDetail.id_product}
+                        ${orderDetail.color}
+                        </div>
+                         `;
+                    })
+                    orders += (orderTitle+ suborder)
+                });
+                document.getElementById("order").innerHTML  =
+                    `<div class="d-flex flex-column order-card">`
+                    +
+                    orders
+                    +
+                    `</div>`;
+            }
+
+        }   
     }
     update()
     {
