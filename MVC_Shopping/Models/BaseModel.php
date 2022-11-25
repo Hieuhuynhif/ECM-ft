@@ -5,11 +5,11 @@
 
         public function __construct()
         {
-            $this->connect = $this->connect();
         }
 
         public function _query($sql)
         {
+            $this->connect = $this->connect();
             return mysqli_query($this->connect, $sql);
         }
         public function basegetall($table, $select = ['*'], $orderBys = [], $limit = 15)
@@ -22,12 +22,14 @@
             }else{
                 $sql = "SELECT ${columns} FROM ${table} WHERE status = '1' LIMIT ${limit} ";
             }
+            
             $query = $this->_query($sql);
             $data = [];
             while($row = mysqli_fetch_assoc($query))
             {
                 array_push($data, $row);
             }
+            $this->close($this->connect);
             return $data;
         }
         
@@ -47,7 +49,7 @@
             {
                 array_push($data, $row);
             }
-
+            $this->close($this->connect);
             return $data;
         }
         public function basegetlike($table, $key = []) 
@@ -66,7 +68,7 @@
             {
                 array_push($data, $row);
             }
-
+            $this->close($this->connect);
             return $data;
         }
         
@@ -81,6 +83,7 @@
             $values= "'" . implode("' , '", $values) . "'";
             $sql = "INSERT INTO ${table} (${keys}) VALUES (${values}) ; ";
             $this->_query($sql);
+            $this->close($this->connect);
         }
         
         public function baseupdate($table, $update = [])
@@ -101,6 +104,7 @@
             $sql = "UPDATE ${table}
                     SET ${updates} WHERE ${where} ;";
             $this->_query($sql);
+            $this->close($this->connect);
         }
         
         public function basedelete($table, $delete = [])
@@ -113,6 +117,7 @@
             $sql = "DELETE FROM ${table}
                     WHERE ${deletes}";
             $this->_query($sql);
+            $this->close($this->connect);
         }
     }
 ?>

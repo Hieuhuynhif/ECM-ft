@@ -71,7 +71,7 @@ class Cart
         {
             this.checkLogin = true;
             this.loginRole = `${data.role}`;
-            let checkLogin =`${data.username}|${data.password}|${data.role}`;
+            let checkLogin =`${data.username}|${data.sdt}|${data.role}`;
             document.getElementById("signIn").innerHTML = `Log Out`;
             document.getElementById("signIn")
             .addEventListener('click', ()=>{
@@ -279,6 +279,7 @@ class Cart
             <div class="summary-checkout">
                 <span class="summary-checkout-btn">Check Out</span>
             </div>`;
+            document.getElementById("detailSummary").innerHTML = summary;
         }
         else
         {
@@ -318,9 +319,10 @@ class Cart
             </div>`;
 
             summary = subtotal + total + checkout;
+            document.getElementById("detailSummary").innerHTML = summary;
+            this.checkout();
         }
-        document.getElementById("detailSummary").innerHTML = summary;
-        this.checkout();
+        
     }
 
     checkout()

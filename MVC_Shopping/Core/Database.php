@@ -16,5 +16,9 @@
             }
             return false;
         }
+        public function close($connect)
+        {
+            return mysqli_close($connect);
+        }
     }
 ?>

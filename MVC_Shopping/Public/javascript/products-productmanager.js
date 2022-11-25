@@ -67,7 +67,7 @@ class ProductManager{
         else
         {
             this.loginRole = `${data.role}`;
-            let checkLogin =`${data.username}|${data.password}|${data.role}`;
+            let checkLogin =`${data.username}|${data.sdt}|${data.role}`;
             document.getElementById("signIn").innerHTML = `Log Out`;
             document.getElementById("signIn")
             .addEventListener('click', ()=>{
