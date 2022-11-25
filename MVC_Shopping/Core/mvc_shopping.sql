@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2022 at 03:01 PM
+-- Generation Time: Nov 25, 2022 at 03:04 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -70,14 +70,6 @@ CREATE TABLE `orders` (
   `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`id`, `username`, `sdt`, `time`, `address`) VALUES
-(9, 'test', '1432', '11/25/2022, 5:55:49 PM', 'đấ'),
-(10, 'test', '4234432', '11/25/2022, 5:56:14 PM', '34234');
-
 -- --------------------------------------------------------
 
 --
@@ -94,13 +86,6 @@ CREATE TABLE `products` (
   `detail` text NOT NULL,
   `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `name`, `price`, `type`, `gender`, `src`, `detail`, `status`) VALUES
-(21, 'test', 111, 'shoes', 'men', '', 'dsaada', 1);
 
 -- --------------------------------------------------------
 
@@ -148,8 +133,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `sdt`, `src`, `likes`, `role`) VALUES
-(68, 'admin', 'admin', '999999999', '', '', 'admin'),
-(70, 'test', '111', '111', 'Assets/ImageUsers/test.jpg', '', 'customer');
+(68, 'admin', 'admin', '999999999', '', '', 'admin');
 
 --
 -- Indexes for dumped tables
