@@ -94,6 +94,9 @@
                 <div class="d-flex flex-row account-general-edit" id = "accountGeneralEdit">
                         
                 </div>
+                <div class="d-flex flex-column order">
+
+                </div>
             </div>
             <div class="d-flex flex-row footer">
                 <div class="d-flex flex-column footer-find">

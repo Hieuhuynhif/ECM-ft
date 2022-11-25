@@ -145,7 +145,6 @@
             {
                 $order = json_decode($_POST['order'], true);
                 $order['username']  =   $_SESSION['user']['username'];
-                $order['sdt']       =   $_SESSION['user']['sdt'];
                 $this->orderModel->insert($order);
                 $time = [
                     'time' => $order['time']
@@ -163,35 +162,7 @@
                             'qty'           => $value['qty']
                         ];
                         $this->orderDetailModel->insert($detailOrder);
-                    }
-                    
-                }
-                $json = [
-                    'status' => 'ok'
-                ];
-            }
-            else if(!empty($_SESSION['cart']) && empty($_SESSION['user'])
-                    && !empty($_POST['order']))
-            {
-                $order = json_decode($_POST['order'], true);
-                $this->orderModel->insert($order);
-                $time = [
-                    'time' => $order['time']
-                ];
-                $order = $this->orderModel->getby($time);
-                foreach($_SESSION['cart'] as $id_product => $qty)
-                {
-                    foreach($qty as $value)
-                    {
-                        $detailOrder = [
-                            'id_order'      => $order['id'],
-                            'id_product'    => $id_product,
-                            'color'         => $value['color'],
-                            'size'          => $value['size'],
-                            'qty'           => $value['qty']
-                        ];
-                        $this->orderDetailModel->insert($detailOrder);
-                    }     
+                    }   
                 }
                 $json = [
                     'status' => 'ok'

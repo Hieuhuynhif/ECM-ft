@@ -82,6 +82,7 @@ class Cart
                 .then(()=>{
                     this.loginRole = "";
                     this.showlogin();
+                    this.showsummary();
                 });
             })
             document.getElementById("infoSignin").innerHTML = checkLogin;
@@ -313,14 +314,35 @@ class Cart
                 <div class="summary-total-title"><h6>Total</h6></div>
                 <div class="summary-total-price">${totalPrice}</div>
             </div>`;
-            checkout =
-            `<div class="summary-checkout">
-                <span class="summary-checkout-btn summary-checkout-btn-active" id = "checkOut">Check Out</span>
-            </div>`;
-
-            summary = subtotal + total + checkout;
-            document.getElementById("detailSummary").innerHTML = summary;
-            this.checkout();
+            if(this.checkLogin == false)
+            {
+                checkout =
+                `<div class="summary-checkout">
+                    <span class="summary-checkout-btn summary-checkout-btn-active" id = "checkOut">Sign to Buy</span>
+                </div>`;
+                summary = subtotal + total + checkout;
+                document.getElementById("detailSummary").innerHTML = summary;
+                document.getElementById("checkOut")
+                .addEventListener('click', ()=>{
+                    window.open("index.php?controller=login","_self");
+                })
+            }
+            else
+            {
+                checkout =
+                `<div class=" d-flex flex-column summary-checkout">
+                    <input type="text" placeholder = "Phone Number" id="sdt" value="">
+                    <input type="text" placeholder = "Address" id="address" value="">
+                    <div class="notify">
+                        <p class="text-break" id = "notify"></p>
+                    </div>
+                    <span class="summary-checkout-btn summary-checkout-btn-active" id = "checkOut">Check Out</span>
+                </div>`;
+                summary = subtotal + total + checkout;
+                document.getElementById("detailSummary").innerHTML = summary;
+                this.checkout();
+            }
+            
         }
         
     }
@@ -329,20 +351,32 @@ class Cart
     {
         document.getElementById("checkOut")
         .addEventListener('click',async ()=>{
-            if(this.checkLogin == false)
+            document.getElementById("notify").classList.remove("notify-text");   
+            let sdt     =   document.getElementById("sdt").value;
+            let address =   document.getElementById("address").value;
+            let date = new Date();
+            let notify = "";
+            
+            if(sdt == "" || address == "")
             {
-
-                
+                notify =
+                `Please fill all the infomation`;
+            }
+            else if(isNaN(sdt))
+            {
+                notify =
+                `Price must be Number`;
             }
             else
             {
-                let date = new Date()
                 let order = {
-                    'time'  :   date.toLocaleString(),
+                    'sdt'       :   sdt,
+                    'time'      :   date.toLocaleString(),
+                    'address'   :   address,
                 }
                 let formData = new FormData();
                 formData.append('order', JSON.stringify(order));
-
+    
                 let url = `index.php?controller=cart&action=order`;
                 let response = await fetch(url,{
                     method : "POST",
@@ -351,18 +385,23 @@ class Cart
                 let data = await response.json()
                 if(data.status == "ok")
                 {
-
+    
                 }
                 else if(data.status == "no")
                 {
-
+    
                 }
                 else
                 {
-
+                    notify =
+                    `Error`;
                 }
-                
             }
+            
+            setTimeout(() => {
+                document.getElementById("notify").innerHTML = notify;
+                document.getElementById("notify").classList.toggle("notify-text");   
+                }, 500);
         })
     }
     

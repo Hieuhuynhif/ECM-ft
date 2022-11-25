@@ -119,26 +119,26 @@ class User{
         }
         else 
         {
-            let url = `index.php?&controller=user&action=getuser&username=${dataCheck.username}`;
-            let response = await fetch(url,{
+            let urlUser = `index.php?&controller=user&action=getuser&username=${dataCheck.username}`;
+            let responseUser = await fetch(urlUser,{
                 method: "GET"
             })
-            let data = await response.json()
+            let dataUser = await responseUser.json()
             document.getElementById("accountGeneralInfoValue").innerHTML = 
-            `<h5 id = "username">${data[0].username}</h5>
-            <h5 id = "role">${data[0].role}</h5>
-            <input type="password" value="${data[0].password}" placeholder = "Password" id = "password">
-            <input type="password" value="${data[0].password}" placeholder = "Confirm Password" id = "confirmPassword">
-            <input type="text" value="${data[0].sdt}" placeholder = "Phone Number" id="sdt">
+            `<h5 id = "username">${dataUser[0].username}</h5>
+            <h5 id = "role">${dataUser[0].role}</h5>
+            <input type="password" value="${dataUser[0].password}" placeholder = "Password" id = "password">
+            <input type="password" value="${dataUser[0].password}" placeholder = "Confirm Password" id = "confirmPassword">
+            <input type="text" value="${dataUser[0].sdt}" placeholder = "Phone Number" id="sdt">
             <input type="file" name="" id="avatar">`;
             document.getElementById("accountGeneralEdit").innerHTML =
             `<button id = "update">Update Infomation</button>
             <button id = "delete">Delete Account</button>`;
 
             let src = `Assets/ImageUsers/UserDefault.png`;
-            if(data[0].src)
+            if(dataUser[0].src)
             {
-                src = data[0].src;
+                src = dataUser[0].src;
             }
             document.getElementById("accountGeneralCard").innerHTML =
                 `<div class="card">
@@ -147,8 +147,8 @@ class User{
                 </div>
                 <div class="card-action">
                     <div class="d-flex flex-column card-info">
-                        <p>${data[0].username}</p>
-                        <p>${data[0].role}</p>
+                        <p>${dataUser[0].username}</p>
+                        <p>${dataUser[0].role}</p>
                     </div>
                     <div class="d-flex flex-row card-icon">
                         <i class="fa-brands fa-facebook"></i>
@@ -161,10 +161,11 @@ class User{
                     </div>
                 </div>
                 </div>`;
-
                 this.update();
                 this.delete();
-        } 
+
+            // let urlOrder = `index.php?&controller=user&action=getuser&username=${dataCheck.username}`
+        }
     }
     update()
     {
