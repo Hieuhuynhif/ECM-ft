@@ -21,25 +21,26 @@ body{
 .body-page{
     color: #fff;
 }
-.menu{
+.header{
+	position: sticky;
+	top: 0;
+	z-index: 3;
 	background-color: #fff;
-	width: 100%;
-	padding: 0.1rem;
-	height: 7vh;
+}
+.menu{
+	justify-content: center;
+	align-items: center;
 }
 
-.icon-nike ,.menu-cart-heart, .menu-option {
+/* Menu --------------------------*/
+
+.icon-nike ,.menu-cart-heart, .menu-option,.search {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	justify-content: center;
+	flex-direction: row;
 }
-.menu .icon-nike{
-	width: 20%;
-}
-.menu .menu-option{
-	width: 60%;
-}
+
 .menu-option span{
 	padding: 0.5rem;
 	cursor: pointer;
@@ -58,9 +59,7 @@ body{
 	color: #272d40;
 }
 
-.menu .menu-cart-heart{
-	width: 20%;
-}
+
 .icon-cart, .icon-heart{
 	width: 2.5rem;
 	height: 2.5rem;
@@ -91,19 +90,11 @@ body{
 	color: #272d40;
 	font-weight: 600;
 }
-.main{
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 80vh;
-}
 .login{
-    width: 50%;
-    justify-content: center;
-    align-items: center;
+    height: 70vh;
 }
+
 .login-form{
-    width: 100%;
     padding: 2rem;
     justify-content: center;
     align-items: center;
@@ -132,31 +123,20 @@ body{
     margin-top: 1rem;
     font-weight: 600;
     color: #000;
-    line-height: normal;
-    
+    line-height: normal;  
 }
 
-.login-form-username , 
-.login-form-password{
-    margin: 0.5rem auto;
-    width: 100%;
-    height: 2.5rem;
-}
 input{
-    width: 50%;
-    height: 100%;
+    width: 300px;
     border: solid 1px #888;
     border-radius: 5px;
     padding: 0.5rem;
     margin: 0.5rem 0;
 }
-.login-form-submit{
-    width: 100%;
-    margin-top:4rem;
-}
+
 
 .login-form button{
-    width: 50%;
+    width: 300px;
     height: 3rem;
     font-size: 0.8rem;
     background-color: #000;
@@ -192,15 +172,7 @@ input{
 	background-color: #000;
 	padding: 3rem;
 }
-.footer-find{
-	width: 20%;
-}
-.footer-get{
-	width: 20%;
-}
-.footer-about{
-	width: 20%;
-}
+
 .footer p{
 	font-size: 0.7rem;
 	color: #888;
@@ -215,8 +187,10 @@ input{
 	cursor: pointer;
 	font-weight: 500;
 }
+.footer-about, .footer-get, .footer-find{
+	justify-content: top;
+}
 .footer-icon{
-	width: 40%;
 	justify-content: right;
 }
 .footer-icon i{
@@ -233,4 +207,7 @@ input{
 }
 .footer-icon i:hover{
 	background-color: #fff;
+}
+.container{
+	max-width: 100% !important;
 }

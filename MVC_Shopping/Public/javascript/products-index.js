@@ -37,7 +37,7 @@ class ProductIndex
         {
             this.loginRole = `${data.role}`;
             let checkLogin =`${data.username}|${data.sdt}|${data.role}`;
-            document.getElementById("signIn").innerHTML = `Log Out`;
+            document.getElementById("signIn").innerHTML = `| Log Out`;
             document.getElementById("signIn")
             .addEventListener('click', ()=>{
                 let url="index.php?controller=login&action=logout";

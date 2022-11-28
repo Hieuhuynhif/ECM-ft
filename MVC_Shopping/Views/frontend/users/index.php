@@ -11,90 +11,87 @@
 </head>
 <body>
     <div class="body-page">
-        <div class="d-flex flex-column">
-<!-- Header--------------------------------------------------------- -->
-            <div class="d-flex flex-column header">
-                <div class="d-flex flex-row jordan">
-                    <div class="icon-jordan">
-                    <img src="Assets/Home/ImageHome/jordanicon.png" alt="">
-                    </div>
-                    <div class="sign">
-                        <span id="editUser"></span>
-                        
-                        <span id="editProduct"></span>
-                        
-                        <span id="findAStore">Find a store</span>
-                        |
-                        <span id="help">Help</span>
-                        |
-                        <span id="joinUs">Join Us</span>
-                        |
-                        <span id="infoSignin"></span>
-                        <span id = "signIn"></span>
+        <div class="container">
+        <div class="row row-cols-1 header">
+                <div class="col jordan">
+                    <div class="row">
+                        <div class="col-12 col-sm-2 icon-jordan">
+                            <img src="Assets/Home/ImageHome/jordanicon.png" alt="">
+                        </div>
+                        <div class="col-12 col-sm-10 sign">
+                            <span id="editUser"></span>
+                            
+                            <span id="editProduct"></span>
+
+                            <span id="infoSignin"></span>
+                            <span id = "signIn"></span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="d-flex flex-row menu">
-                    <div class="icon-nike">
-                        <img src="Assets/Home/ImageHome/nikeicon.png" alt="">
-                    </div>
-
-                    <div class="menu-option">
-                        <span id="store">
-                        <i class="fa-solid fa-angle-left"></i>
-                        <i class="fa-solid fa-store"></i>
-                        <span>STORE</span>
-                        </span>
-                    </div>
-
-                    <div class="menu-cart-heart">
-                        <div class="icon-heart" id="btnHeart">
-                            <i class="fa-regular fa-heart"></i>
+                <div class="col menu">
+                    <div class="row">
+                        <div class="col-12 col-sm-2 icon-nike">
+                            <img src="Assets/Home/ImageHome/nikeicon.png" alt="">
                         </div>
-                        <div class="number">
-                            <span>Your Favourities:</span>
-                            <span id = "numLike">
 
+                        <div class="col-12 col-sm-10 col-lg-7 menu-option">
+                            <span id="store">
+                                <i class="fa-solid fa-angle-left"></i>
+                                <i class="fa-solid fa-store"></i>
+                                <span>STORE</span>
                             </span>
                         </div>
-                        <div class="icon-cart" id="btnCart">
-                            <i class="fa-solid fa-cart-flatbed-suitcase"></i>
-                        </div>
-                        <div class="number">
-                            <span>Your cart:</span>
-                            <span id = "numCart">
 
-                            </span>
+                        <div class="col-12 col-lg-3 menu-cart-heart">
+                            <div class="icon-heart" id="btnHeart">
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
+                            <div class="number">
+                                <span>Your Favourite:</span>
+                                <span id = "numLike">
+
+                                </span>
+                            </div>
+                            <div class="icon-cart" id="btnCart">
+                                <i class="fa-solid fa-cart-flatbed-suitcase"></i>
+                            </div>
+                            <div class="number">
+                                <span>Your cart:</span>
+                                <span id = "numCart">
+
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="d-flex flex-column account">
-                <div class="d-flex flex-row account-general">
-                    <div class="d-flex flex-row account-general-info" >
-                        <div class="d-flex flex-column account-general-info-title">
-                            <h5>Username: </h5>
-                            <h5>Role: </h5>
-                            <h6>Password:</h6>
-                            <h6>Confirm Password:</h6>
-                            <h6>Phone Number:</h6>
-                            <h6>Avatar:</h6>
-                        </div>
-                        <div class="d-flex flex-column account-general-info-value" id = "accountGeneralInfoValue">
-                            
-                        </div>
+
+            <div class="row account">
+                <div class="col-12 col-md-7 d-flex flex-row account-general-info" >
+                    <div class="d-flex flex-column account-general-info-title">
+                        <h5>Username: </h5>
+                        <h5>Role: </h5>
+                        <h6>Password:</h6>
+                        <h6>Confirm Password:</h6>
+                        <h6>Phone Number:</h6>
+                        <h6>Avatar:</h6>
                     </div>
-                    <div class="account-general-card" id="accountGeneralCard">
+                    <div class="d-flex flex-column account-general-info-value" id = "accountGeneralInfoValue">
                         
                     </div>
                 </div>
-                <div class="notify">
+                <div class="col-12 col-md-5 account-general-card" id="accountGeneralCard">
+                    
+                </div>
+
+                <div class="col-12 notify">
                     <p class="text-break" id="notify"></p>
                 </div>
-                <div class="d-flex flex-row account-general-edit" id = "accountGeneralEdit">
+                <div class="col-12 d-flex flex-row account-general-edit" id = "accountGeneralEdit">
                         
                 </div>
-                <div class="d-flex flex-column orders">
+                <div class="col-12 d-flex flex-column orders">
                     <div class="flex flex-column ">
                         <h3>Order History</h3>
                         <div class="order-title">
@@ -108,17 +105,17 @@
                     <div class="d-flex flex-column" id="order">
                     
                     </div>
-                </div>
-                
+                </div> 
             </div>
-            <div class="d-flex flex-row footer">
-                <div class="d-flex flex-column footer-find">
+
+            <div class="row footer">
+                <div class="col-12 col-md-4 col-lg-2 d-flex flex-column footer-find">
                     <h6>FIND A STORE</h6>
                     <h6>BECOME A MEMBER</h6>
                     <h6>SIGN UP FOR EMAIL</h6>
                     <h6>SEND US FEEDBACK</h6>
                 </div>
-                <div class="d-flex flex-column footer-get">
+                <div class="col-12 col-md-4 col-lg-2 d-flex flex-column footer-get">
                     <h6>GET HELP</h6>
                     <p>Order Status</p>
                     <p>Delivery</p>
@@ -126,14 +123,14 @@
                     <p>Payment Options</p>
                     <p>Contact Us</p>
                 </div>
-                <div class="d-flex flex-column footer-about">
+                <div class="col-12 col-md-4 col-lg-2 d-flex flex-column footer-about">
                     <h6>ABOUT NIKE</h6>
                     <p>News</p>
                     <p>Careers</p>
                     <p>Investors</p>
                     <p>Sustainability</p>
                 </div>
-                <div class="d-flex flex-row footer-icon">
+                <div class="col-12 col-lg-6 d-flex flex-row footer-icon">
                     <i class="fa-brands fa-twitter"></i>
                     <i class="fa-brands fa-facebook-f"></i>
                     <i class="fa-brands fa-youtube"></i>
