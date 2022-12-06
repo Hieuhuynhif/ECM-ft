@@ -28,12 +28,6 @@
                 $products = $this->productModel->getby([
                     'name' => $name,
                 ]);
-                if(empty($products))
-                {
-                    $products = [
-                        "empty" =>  "1",
-                    ];
-                }
             }
             else if(isset($_GET['type']) && isset($_GET['gender']))
             {
@@ -67,7 +61,12 @@
             {
                 $products = $this->productModel->getall();
             }
-
+            if(empty($products))
+            {
+                $products = [
+                    "empty" =>  "1",
+                ];
+            }
             echo json_encode($products);
         }
         public function searchproduct()

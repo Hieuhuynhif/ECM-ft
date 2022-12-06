@@ -109,7 +109,14 @@ class ProductManager{
     }
     showSearch(data, src)
     {
-        document.getElementById("main").innerHTML =
+        if(data.empty)
+        {
+            document.getElementById("main").innerHTML =
+                `Name is empty`;
+        }
+        else
+        {
+            document.getElementById("main").innerHTML =
             `
             <div class="d-flex flex-row">
                 <div class="image">
@@ -159,6 +166,7 @@ class ProductManager{
 
         this.update();
         this.delete();
+        }
     }
     async search()
     {
@@ -179,8 +187,7 @@ class ProductManager{
                 let data = await response.json();
                 if(data.empty)
                 {
-                    document.getElementById("main").innerHTML =
-                    `Name is not existed`;
+                    this.showSearch(data);
                 }
                 else
                 {
@@ -204,12 +211,19 @@ class ProductManager{
                 method  :   "GET",
             });
             let data        =   await response.json();
-            let src = `Assets/ImageProducts/ProductDefault.png`;
-            if(data[0].src)
+            if(!data.empty)
             {
-                src = data[0].src;
+                let src = `Assets/ImageProducts/ProductDefault.png`;
+                if(data[0].src)
+                {
+                    src = data[0].src;
+                }
+                this.showSearch(data, src) 
             }
-            this.showSearch(data, src)  
+            else
+            {
+                this.showSearch(data);
+            }
         }
         
     }
