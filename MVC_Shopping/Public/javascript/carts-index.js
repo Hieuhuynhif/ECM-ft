@@ -365,7 +365,7 @@ class Cart
             else if(isNaN(sdt))
             {
                 notify =
-                `Price must be Number`;
+                `Phone Number must be Number`;
             }
             else
             {
