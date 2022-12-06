@@ -70,8 +70,10 @@
             </div>
             
             <div class="row ">
-                <div class="col-12 col-lg-9 d-flex flex-wrap products" id="products">
+                <div class="col-12 col-lg-9 " >
+                    <div class="row products" id="products">
 
+                    </div>
                 </div>
                 <div class="col-12 col-lg-3 detail-product">
                     <h1 class="text-break">Detail Item</h1>

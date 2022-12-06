@@ -137,38 +137,40 @@ class ProductIndex
                 src = productCard.src; 
             }
             products += 
-                `<div class="card_c col" id ="${productCard.id}">
-                <span class="like addToFvr"><i class="fa-sharp fa-solid fa-heart-circle-plus"></i></span>
-                <span class="cart addToCart"><i class="fa-solid fa-cart-plus" ></i></span>
-                    ${editProduct}
-                <div class="card-img">
-                    <div class="card__img">
-                    <img src="${src}" alt="" />
-                    </div>
-                </div>
-                <h2 class="card__title">${productCard.name}</h2>
-                <p class="card__price">${productCard.price}</p>
-                <div class="card__action">
-                    <div class="card-color-size">
-                        <div class="card__size">
-                            <h5>Size:</h5>
-                            <span class="size">6</span>
-                            <span class="size">7</span>
-                            <span class="size">8</span>
-                            <span class="size">9</span>
+                `<div class ="col-12 col-md-6 col-lg-4 product">
+                    <div class="card_c" id ="${productCard.id}">
+                        <span class="like addToFvr"><i class="fa-sharp fa-solid fa-heart-circle-plus"></i></span>
+                        <span class="cart addToCart"><i class="fa-solid fa-cart-plus" ></i></span>
+                            ${editProduct}
+                        <div class="card-img">
+                            <div class="card__img">
+                            <img src="${src}" alt="" />
+                            </div>
                         </div>
-                        <div class="card__color">
-                            <h5>Color:</h5>
-                            <span class="color green"></span>
-                            <span class="color red"></span>
-                            <span class="color black"></span>
+                        <h2 class="card__title">${productCard.name}</h2>
+                        <p class="card__price">${productCard.price}</p>
+                        <div class="card__action">
+                            <div class="card-color-size">
+                                <div class="card__size">
+                                    <h5>Size:</h5>
+                                    <span class="size">6</span>
+                                    <span class="size">7</span>
+                                    <span class="size">8</span>
+                                    <span class="size">9</span>
+                                </div>
+                                <div class="card__color">
+                                    <h5>Color:</h5>
+                                    <span class="color green"></span>
+                                    <span class="color red"></span>
+                                    <span class="color black"></span>
+                                </div>
+                            </div>
+                            <div class="card-detail-buy">
+                                <button class ="card-detail">Detail</button>
+                                <button class ="card-buy">Buy now</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-detail-buy">
-                        <button class ="card-detail">Detail</button>
-                        <button class ="card-buy">Buy now</button>
-                    </div>
-                </div>
                 </div>`;
         }) 
         }
@@ -315,7 +317,7 @@ class ProductIndex
         .forEach(element =>{
             element.addEventListener('click', ()=>{
                 let url = `index.php?controller=product&action=productmanager&id=` + element.parentElement.id;
-                window.open(url);
+                window.open(url, "_self");
             })
         })
     }

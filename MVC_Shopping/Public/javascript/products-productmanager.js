@@ -107,7 +107,60 @@ class ProductManager{
             this.new();
         }
     }
-    search()
+    showSearch(data, src)
+    {
+        document.getElementById("main").innerHTML =
+            `
+            <div class="d-flex flex-row">
+                <div class="image">
+                    <div class="image-frame">
+                        <img src="${src}" alt="">
+                    </div>
+                </div>
+                <div class="d-flex flex-column title">
+                    <h5>Status :</h5>
+                    <h5>ID :</h5>
+                    <h5>Name :</h5>
+                    <h5>Price :</h5>
+                    <h5>Type :</h5>
+                    <h5>Gender :</h5>
+                    <h5>Detail :</h5>
+                    <h5>Image :</h5> 
+                </div>
+                <div class="d-flex flex-column value">
+                    <select name="" id="status">
+                        <option value="1">Active</option>
+                        <option value="0">Deactive</option>
+                    </select>
+                    <h5 id="id">${data[0].id}</h5>
+                    <h5 id="name">${data[0].name}</h5>
+                    <input type="text" id="price" placeholder = "price" value="${data[0].price}">
+                    <select name="" id="type">
+                        <option value="shoes">shoes</option>
+                        <option value="hat">hat</option>
+                        <option value="jacket">jacket</option>
+                    </select>
+                    <select name="" id="gender">
+                        <option value="men">Men</option>
+                        <option value="women">Women</option>
+                        <option value="children">Children</option>
+                    </select>
+                    <input type="text" id="detail" placeholder = "detail" value="${data[0].detail}">
+                    <input type="file" id="image">
+                </div>
+            </div>
+            <div class="notify">
+                <p class="text-break" id = "notify"></p>
+            </div>
+            <div class="d-flex flex-row edit-product" >
+                <button id="update">Update</button>
+                <button id="delete">Delete</button>
+            </div>`; 
+
+        this.update();
+        this.delete();
+    }
+    async search()
     {
         document.getElementById("search")
         .addEventListener('click',async ()=>{
@@ -136,59 +189,29 @@ class ProductManager{
                     {
                         src = data[0].src;
                     }
-                    document.getElementById("main").innerHTML =
-                    `
-                    <div class="d-flex flex-row">
-                        <div class="image">
-                            <div class="image-frame">
-                            <img src="${src}" alt="">
-                            </div>
-                        </div>
-                        <div class="d-flex flex-column title">
-                            <h5>Status :</h5>
-                            <h5>ID :</h5>
-                            <h5>Name :</h5>
-                            <h5>Price :</h5>
-                            <h5>Type :</h5>
-                            <h5>Gender :</h5>
-                            <h5>Detail :</h5>
-                            <h5>Image :</h5> 
-                        </div>
-                        <div class="d-flex flex-column value">
-                            <select name="" id="status">
-                                <option value="1">Active</option>
-                                <option value="0">Deactive</option>
-                            </select>
-                            <h5 id="id">${data[0].id}</h5>
-                            <h5 id="name">${data[0].name}</h5>
-                            <input type="text" id="price" placeholder = "price" value="${data[0].price}">
-                            <select name="" id="type">
-                                <option value="shoes">shoes</option>
-                                <option value="hat">hat</option>
-                                <option value="jacket">jacket</option>
-                            </select>
-                            <select name="" id="gender">
-                                <option value="men">Men</option>
-                                <option value="women">Women</option>
-                                <option value="children">Children</option>
-                            </select>
-                            <input type="text" id="detail" placeholder = "detail" value="${data[0].detail}">
-                            <input type="file" id="image">
-                        </div>
-                    </div>
-                    <div class="notify">
-                        <p class="text-break" id = "notify"></p>
-                    </div>
-                    <div class="d-flex flex-row edit-product" >
-                        <button id="update">Update</button>
-                        <button id="delete">Delete</button>
-                    </div>`; 
-
-                this.update();
-                this.delete();
+                    this.showSearch(data, src)   
                 }
             }
         })
+
+        let url = window.location.href;
+        let searchId = url.search("controller=product&action=productmanager&id=");
+        if(searchId > 0)
+        {
+            let id = url.slice(url.search("id=") + 3);
+            url = `index.php?controller=product&action=getproduct&id=${id}`;
+            let response    =   await fetch(url,{
+                method  :   "GET",
+            });
+            let data        =   await response.json();
+            let src = `Assets/ImageProducts/ProductDefault.png`;
+            if(data[0].src)
+            {
+                src = data[0].src;
+            }
+            this.showSearch(data, src)  
+        }
+        
     }
     update()
     {
