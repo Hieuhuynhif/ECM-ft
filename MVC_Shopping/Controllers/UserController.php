@@ -174,7 +174,7 @@ class UserController extends BaseController
     
     public function deleteuser()
     {
-        if(isset($_POST['infoData']))
+        if(isset($_POST['infoData']) && isset($_SESSION['user']))
         {
             $infoData = json_decode($_POST['infoData'], true);
 
@@ -212,7 +212,6 @@ class UserController extends BaseController
                 }
                 
             }
-            
         }
         else
         {
