@@ -43,14 +43,18 @@
        
         public function dislike()
         {
-            if(!empty($_GET['id']))
+            if(!empty($_GET['id']) && is_numeric($_GET['id']))
             {
                 unset($_SESSION['like'][$_GET['id']]);
+            }
+            else
+            {
+                unset($_SESSION['like']);
             }
         }
         public function getlike()
         {
-            if(empty( $_SESSION['like']))
+            if(empty($_SESSION['like']))
             {
                 $likes = [
                     'empty' => TRUE
