@@ -137,7 +137,7 @@ class ProductIndex
                 src = productCard.src; 
             }
             products += 
-                `<div class ="col-12 col-md-6 col-lg-4 product">
+                `<div class ="col-12 col-md-6 col-xl-4 product">
                     <div class="card_c" id ="${productCard.id}">
                         <span class="like addToFvr"><i class="fa-sharp fa-solid fa-heart-circle-plus"></i></span>
                         <span class="cart addToCart"><i class="fa-solid fa-cart-plus" ></i></span>
