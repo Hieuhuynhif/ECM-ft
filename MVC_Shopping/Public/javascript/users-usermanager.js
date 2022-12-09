@@ -301,26 +301,9 @@
                         <input type="password" id="confirmPassword" placeholder="Confirm Password" value="">
                         <input type="file" id="avatar">
                     </div>
-                    <div class = "card-frame">
-                        <div class="card">
-                            <div class="d-flex card-img">
-                            <img  src="Assets/ImageDefault/UserDefault.png" alt="">
-                            </div>
-                            <div class="card-action">
-                                <div class="d-flex flex-column card-info">
-                                    <p>Username</p>
-                                    <p>Role</p>
-                                </div>
-                                <div class="d-flex flex-row card-icon">
-                                    <i class="fa-brands fa-facebook"></i>
-                                    <i class="fa-brands fa-instagram"></i>
-                                    <i class="fa-brands fa-tiktok"></i>
-                                    <i class="fa-solid fa-envelopes-bulk"></i>
-                                </div>
-                                <div class="d-flex card-contact">
-                                    <button>Contact</button>
-                                </div>
-                            </div>
+                    <div class="image">
+                        <div class="image-frame">
+                            <img  src="Assets/ImageUsers/UserDefault.png" alt="">
                         </div>
                     </div>
                 </div>
